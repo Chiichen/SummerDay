@@ -1,10 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool strsort( string& str1, string& str2)
-{
-    
-    return str1<str2;
-}
 int main()
 {
     vector<string>vec;
@@ -13,7 +8,7 @@ int main()
     {
         vec.push_back(str);
     }
-    sort(vec.begin(),vec.end(),strsort);
+    sort(vec.begin(),vec.end(),[](string& str1,string& str2)->bool{return str1<str2;});
     auto ite = unique(vec.begin(),vec.end());
     vec.erase(ite, vec.end());
     for(auto e:vec)

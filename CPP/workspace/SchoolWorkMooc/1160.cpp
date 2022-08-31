@@ -1,11 +1,20 @@
-#include<iostream>
-#include<math.h>
-int *num(int m,int n)
+#include <iostream>
+#include <math.h>
+using namespace std;
+int output(int n)
 {
-    static int a[n]={};
-    for(int i=0;i<=n-1;i++)
+  if (n < 10)
     {
-        a[i]=m/int(pow(10,i))%10;
+      cout<<n;
+      return 0;
     }
-    return a;
+  cout << n % 10;
+  return output(n / 10);
+}
+int main()
+{
+  int a = 0;
+  cin>>a;
+  output(a);
+  return 0;
 }
